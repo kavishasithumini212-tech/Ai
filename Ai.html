@@ -1,0 +1,1733 @@
+```html
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FAST SMART AI — Ultimate AI Super Platform | Created by Oneth</title>
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- Google Fonts: Inter & Noto Sans Sinhala & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&family=Noto+Sans+Sinhala:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+  
+  <!-- Marked.js for Markdown Rendering -->
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'Noto Sans Sinhala', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            deepBlack: '#05070D',
+            midnightBlue: '#071426',
+            electricBlue: '#0066FF',
+            neonCyan: '#00E5FF',
+            aiPurple: '#8B5CF6',
+            iceWhite: '#F5F8FF',
+          },
+          animation: {
+            'pulse-slow': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+            'spin-slow': 'spin 8s linear infinite',
+            'float': 'float 4s ease-in-out infinite',
+          },
+          keyframes: {
+            float: {
+              '0%, 100%': { transform: 'translateY(0px)' },
+              '50%': { transform: 'translateY(-8px)' },
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    :root {
+      --bg-primary: #05070D;
+      --bg-secondary: #071426;
+      --glass-bg: rgba(7, 20, 38, 0.68);
+      --glass-border: rgba(0, 229, 255, 0.16);
+      --text-main: #F5F8FF;
+      --text-muted: #94A3B8;
+    }
+
+    html.light {
+      --bg-primary: #F0F4FC;
+      --bg-secondary: #FFFFFF;
+      --glass-bg: rgba(255, 255, 255, 0.85);
+      --glass-border: rgba(0, 102, 255, 0.18);
+      --text-main: #071426;
+      --text-muted: #475569;
+    }
+
+    body {
+      background-color: var(--bg-primary);
+      color: var(--text-main);
+      font-family: 'Inter', 'Noto Sans Sinhala', sans-serif;
+      overflow-x: hidden;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    /* Futuristic Glassmorphism */
+    .glass-panel {
+      background: var(--glass-bg);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      border: 1px solid var(--glass-border);
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+    }
+
+    .glass-card {
+      background: linear-gradient(145deg, rgba(7, 20, 38, 0.78), rgba(5, 7, 13, 0.88));
+      backdrop-filter: blur(14px);
+      border: 1px solid rgba(0, 229, 255, 0.15);
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    html.light .glass-card {
+      background: linear-gradient(145deg, rgba(255, 255, 255, 0.92), rgba(240, 244, 252, 0.96));
+      border: 1px solid rgba(0, 102, 255, 0.16);
+      box-shadow: 0 4px 20px rgba(7, 20, 38, 0.06);
+    }
+
+    .glass-card:hover {
+      border-color: rgba(0, 229, 255, 0.45);
+      box-shadow: 0 0 24px rgba(0, 229, 255, 0.15);
+    }
+
+    /* Neon Glows & Gradients */
+    .neon-text {
+      background: linear-gradient(90deg, #00E5FF 0%, #0066FF 50%, #8B5CF6 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .neon-btn {
+      background: linear-gradient(135deg, #0066FF 0%, #00E5FF 100%);
+      color: #05070D;
+      font-weight: 700;
+      box-shadow: 0 0 18px rgba(0, 229, 255, 0.35);
+      transition: all 0.25s ease;
+    }
+
+    .neon-btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 0 28px rgba(0, 229, 255, 0.6);
+    }
+
+    .purple-neon-btn {
+      background: linear-gradient(135deg, #8B5CF6 0%, #0066FF 100%);
+      color: #F5F8FF;
+      font-weight: 600;
+      box-shadow: 0 0 18px rgba(139, 92, 246, 0.35);
+      transition: all 0.25s ease;
+    }
+
+    .purple-neon-btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 0 28px rgba(139, 92, 246, 0.6);
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+      height: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: rgba(5, 7, 13, 0.4);
+    }
+    ::-webkit-scrollbar-thumb {
+      background: rgba(0, 229, 255, 0.3);
+      border-radius: 999px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: rgba(0, 229, 255, 0.6);
+    }
+
+    /* Markdown Prose Styling */
+    .markdown-body h1, .markdown-body h2, .markdown-body h3 {
+      font-weight: 700;
+      margin-top: 1rem;
+      margin-bottom: 0.5rem;
+      color: #00E5FF;
+    }
+    html.light .markdown-body h1, html.light .markdown-body h2, html.light .markdown-body h3 {
+      color: #0066FF;
+    }
+    .markdown-body p {
+      margin-bottom: 0.75rem;
+      line-height: 1.65;
+    }
+    .markdown-body ul, .markdown-body ol {
+      margin-left: 1.25rem;
+      margin-bottom: 0.75rem;
+      list-style-type: disc;
+    }
+    .markdown-body pre {
+      background: #03050A;
+      color: #E2E8F0;
+      padding: 0.85rem;
+      border-radius: 0.75rem;
+      overflow-x: auto;
+      border: 1px solid rgba(0, 229, 255, 0.2);
+      margin: 0.75rem 0;
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.85rem;
+    }
+    .markdown-body code {
+      font-family: 'JetBrains Mono', monospace;
+      background: rgba(0, 229, 255, 0.12);
+      padding: 0.15rem 0.35rem;
+      border-radius: 0.35rem;
+      font-size: 0.85em;
+    }
+    .markdown-body pre code {
+      background: transparent;
+      padding: 0;
+    }
+    .markdown-body table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 0.75rem 0;
+      font-size: 0.875rem;
+    }
+    .markdown-body th, .markdown-body td {
+      border: 1px solid rgba(0, 229, 255, 0.25);
+      padding: 0.5rem 0.75rem;
+      text-align: left;
+    }
+    .markdown-body th {
+      background: rgba(0, 102, 255, 0.2);
+    }
+
+    /* Voice Orb Animation */
+    .voice-orb {
+      background: radial-gradient(circle at 30% 30%, #00E5FF, #0066FF 55%, #8B5CF6 90%);
+      box-shadow: 0 0 50px rgba(0, 229, 255, 0.5), inset 0 0 25px rgba(255, 255, 255, 0.4);
+      transition: transform 0.15s ease, box-shadow 0.2s ease;
+    }
+    .voice-orb.listening {
+      animation: orbPulse 1.2s infinite alternate ease-in-out;
+    }
+    .voice-orb.speaking {
+      animation: orbSpeak 0.6s infinite alternate ease-in-out;
+    }
+    @keyframes orbPulse {
+      0% { transform: scale(0.96); box-shadow: 0 0 35px rgba(0, 229, 255, 0.45); }
+      100% { transform: scale(1.08); box-shadow: 0 0 75px rgba(0, 229, 255, 0.9); }
+    }
+    @keyframes orbSpeak {
+      0% { transform: scale(0.98); box-shadow: 0 0 45px rgba(139, 92, 246, 0.6); }
+      100% { transform: scale(1.12); box-shadow: 0 0 85px rgba(0, 229, 255, 0.95); }
+    }
+
+    /* Print Styling for PDF Export */
+    @media print {
+      body * { visibility: hidden; }
+      #printable-area, #printable-area * { visibility: visible; }
+      #printable-area {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        background: white !important;
+        color: black !important;
+        padding: 20px;
+      }
+    }
+  </style>
+</head>
+<body class="antialiased selection:bg-neonCyan selection:text-deepBlack">
+
+  <!-- ==================== 1. FUTURISTIC LOADING SPLASH SCREEN ==================== -->
+  <div id="splash-screen" class="fixed inset-0 z-50 flex flex-col items-center justify-center bg-[#05070D] overflow-hidden transition-opacity duration-700">
+    <canvas id="particle-canvas" class="absolute inset-0 w-full h-full pointer-events-none"></canvas>
+    
+    <!-- Ambient Radial Glows -->
+    <div class="absolute w-96 h-96 bg-electricBlue/20 rounded-full blur-[120px] -top-10 -left-10"></div>
+    <div class="absolute w-96 h-96 bg-aiPurple/20 rounded-full blur-[120px] -bottom-10 -right-10"></div>
+
+    <div class="relative z-10 flex flex-col items-center text-center px-6 max-w-2xl">
+      <!-- Rotating Futuristic Core Emblem -->
+      <div class="relative w-28 h-28 mb-8 flex items-center justify-center">
+        <div class="absolute inset-0 rounded-full border-2 border-dashed border-neonCyan/50 animate-spin-slow"></div>
+        <div class="absolute inset-2 rounded-full border-2 border-electricBlue/70 animate-ping opacity-20"></div>
+        <div class="w-20 h-20 rounded-2xl bg-gradient-to-br from-electricBlue via-neonCyan to-aiPurple flex items-center justify-center shadow-[0_0_40px_rgba(0,229,255,0.6)]">
+          <i class="fa-solid fa-atom text-4xl text-deepBlack"></i>
+        </div>
+      </div>
+
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-neonCyan/30 bg-midnightBlue/70 text-neonCyan text-xs font-semibold tracking-widest uppercase mb-4">
+        <span class="w-2 h-2 rounded-full bg-neonCyan animate-ping"></span>
+        Next-Gen Neural Core v4.0
+      </div>
+
+      <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight mb-3 neon-text">
+        FAST SMART AI
+      </h1>
+      <p class="text-sm sm:text-lg font-medium tracking-[0.2em] text-iceWhite/90 uppercase mb-2">
+        YOUR INTELLIGENCE. UNLIMITED POSSIBILITIES.
+      </p>
+      <p class="text-xs sm:text-sm text-neonCyan font-semibold tracking-wider mb-8">
+        Created by Oneth
+      </p>
+
+      <!-- Progress Bar 1% to 100% -->
+      <div class="w-full max-w-md">
+        <div class="flex justify-between text-xs font-mono text-slate-400 mb-2">
+          <span id="splash-status">Initializing Neural Engines...</span>
+          <span id="splash-percent" class="text-neonCyan font-bold">1%</span>
+        </div>
+        <div class="w-full h-2.5 bg-midnightBlue rounded-full overflow-hidden border border-neonCyan/20 p-0.5">
+          <div id="splash-bar" class="h-full rounded-full bg-gradient-to-r from-electricBlue via-neonCyan to-aiPurple transition-all duration-100" style="width: 1%;"></div>
+        </div>
+      </div>
+
+      <button onclick="skipSplash()" class="mt-6 text-xs text-slate-400 hover:text-neonCyan transition underline underline-offset-4">
+        Enter Platform Immediately &rarr;
+      </button>
+    </div>
+  </div>
+
+  <!-- ==================== GLOBAL TOAST NOTIFICATION CONTAINER ==================== -->
+  <div id="toast-container" class="fixed bottom-5 right-5 z-50 flex flex-col gap-2.5 max-w-sm w-full pointer-events-none px-4 sm:px-0"></div>
+
+  <!-- ==================== MAIN SUPER PLATFORM SHELL ==================== -->
+  <div id="app-shell" class="min-h-screen flex flex-col opacity-0 transition-opacity duration-500">
+    
+    <!-- TOP GLOBAL HEADER -->
+    <header class="sticky top-0 z-30 glass-panel border-b border-neonCyan/15 px-3 sm:px-6 py-2.5 flex items-center justify-between gap-2">
+      <!-- Left: Mobile Sidebar Toggle + Brand -->
+      <div class="flex items-center gap-3">
+        <button onclick="toggleSidebar()" class="p-2.5 rounded-xl bg-midnightBlue/70 hover:bg-electricBlue/20 text-neonCyan border border-neonCyan/20 transition" title="Toggle Navigation">
+          <i class="fa-solid fa-bars-staggered"></i>
+        </button>
+        <div class="flex items-center gap-2.5 cursor-pointer" onclick="switchStudio('chat')">
+          <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-electricBlue via-neonCyan to-aiPurple flex items-center justify-center shadow-[0_0_15px_rgba(0,229,255,0.4)]">
+            <i class="fa-solid fa-bolt text-deepBlack text-base"></i>
+          </div>
+          <div>
+            <div class="flex items-center gap-1.5">
+              <span class="font-extrabold text-sm sm:text-base tracking-tight neon-text">FAST SMART AI</span>
+              <span class="hidden md:inline-block text-[10px] px-1.5 py-0.5 rounded bg-neonCyan/15 text-neonCyan border border-neonCyan/30 font-mono">ULTRA</span>
+            </div>
+            <p class="text-[10px] text-slate-400 hidden sm:block">Created by Oneth</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Center: Active Model & Mode Selector -->
+      <div class="flex items-center gap-2 overflow-x-auto max-w-[48vw] sm:max-w-none py-1">
+        <!-- Intelligence Mode Selector -->
+        <div class="flex items-center gap-1.5 bg-midnightBlue/80 border border-neonCyan/20 rounded-xl px-2.5 py-1.5">
+          <i class="fa-solid fa-microchip text-neonCyan text-xs"></i>
+          <select id="global-mode-select" onchange="updateActiveMode()" class="bg-transparent text-xs font-semibold focus:outline-none cursor-pointer text-iceWhite dark:text-iceWhite">
+            <option value="Fast Mode" class="bg-midnightBlue text-white">⚡ Fast Mode</option>
+            <option value="Smart Mode" selected class="bg-midnightBlue text-white">🧠 Smart Mode</option>
+            <option value="Creative Mode" class="bg-midnightBlue text-white">🎨 Creative Mode</option>
+            <option value="Deep Research Mode" class="bg-midnightBlue text-white">🔬 Deep Research Mode</option>
+            <option value="Coding Mode" class="bg-midnightBlue text-white">💻 Coding Mode</option>
+            <option value="Voice Mode" class="bg-midnightBlue text-white">🎙️ Voice Mode</option>
+            <option value="Agent Mode" class="bg-midnightBlue text-white">🤖 Agent Mode</option>
+          </select>
+        </div>
+
+        <!-- AI Provider Selector -->
+        <div class="hidden lg:flex items-center gap-1.5 bg-midnightBlue/80 border border-aiPurple/30 rounded-xl px-2.5 py-1.5">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+          <select id="global-provider-select" onchange="updateActiveProvider()" class="bg-transparent text-xs font-semibold focus:outline-none cursor-pointer text-iceWhite">
+            <option value="Gemini 3 Flash (Live Core)" class="bg-midnightBlue text-white">Google Gemini 3 Flash (Active)</option>
+            <option value="OpenAI GPT-4o (Vault Proxy)" class="bg-midnightBlue text-white">OpenAI ChatGPT (Vault Key)</option>
+            <option value="Anthropic Claude 3.7 (Vault Proxy)" class="bg-midnightBlue text-white">Anthropic Claude (Vault Key)</option>
+            <option value="DeepSeek R1 (Vault Proxy)" class="bg-midnightBlue text-white">DeepSeek AI (Vault Key)</option>
+            <option value="One AI Enterprise (Vault Proxy)" class="bg-midnightBlue text-white">One AI Core (Vault Key)</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Right: Sinhala/EN Toggle, Theme, Vault Status, User -->
+      <div class="flex items-center gap-1.5 sm:gap-2.5">
+        <!-- Sinhala / English Language Switcher -->
+        <button onclick="toggleLanguage()" id="lang-toggle-btn" class="px-2.5 py-1.5 rounded-xl bg-midnightBlue/80 hover:bg-neonCyan/20 border border-neonCyan/25 text-xs font-bold text-neonCyan transition flex items-center gap-1.5" title="Switch Language (Sinhala / English)">
+          <i class="fa-solid fa-language"></i>
+          <span id="lang-label">සිංහල / EN</span>
+        </button>
+
+        <!-- Dark / Light Theme Toggle -->
+        <button onclick="toggleTheme()" class="p-2 rounded-xl bg-midnightBlue/80 hover:bg-electricBlue/20 border border-neonCyan/20 text-slate-300 hover:text-neonCyan transition" title="Toggle Dark/Light Theme">
+          <i id="theme-icon" class="fa-solid fa-sun text-amber-400"></i>
+        </button>
+
+        <!-- Security Vault Quick Badge -->
+        <button onclick="switchStudio('admin')" class="hidden sm:flex items-center gap-1.5 px-2.5 py-1.5 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-semibold hover:bg-emerald-500/20 transition" title="API Key Vault & Security">
+          <i class="fa-solid fa-shield-halved"></i>
+          <span class="hidden xl:inline">Vault Secured</span>
+        </button>
+
+        <!-- Profile Avatar -->
+        <button onclick="switchStudio('workspace')" class="flex items-center gap-2 pl-1.5 pr-2.5 py-1 rounded-xl bg-gradient-to-r from-electricBlue/20 to-aiPurple/20 border border-neonCyan/30 hover:border-neonCyan transition">
+          <div class="w-7 h-7 rounded-lg bg-gradient-to-br from-neonCyan to-electricBlue text-deepBlack font-extrabold text-xs flex items-center justify-center">
+            O
+          </div>
+          <span class="text-xs font-bold hidden md:inline">Oneth</span>
+        </button>
+      </div>
+    </header>
+
+    <!-- BODY LAYOUT: SIDEBAR + MAIN WORKSPACE -->
+    <div class="flex flex-1 relative">
+      
+      <!-- LEFT COLLAPSIBLE SIDEBAR -->
+      <aside id="sidebar" class="fixed lg:static inset-y-0 left-0 z-20 w-64 glass-panel border-r border-neonCyan/15 flex flex-col justify-between transition-transform duration-300 -translate-x-full lg:translate-x-0 pt-16 lg:pt-3 pb-4 px-3 overflow-y-auto">
+        <div class="space-y-1">
+          <div class="px-3 py-1.5 text-[10px] font-bold uppercase tracking-widest text-slate-400 flex items-center justify-between">
+            <span>AI Core Studios</span>
+            <span class="text-neonCyan">12 Modules</span>
+          </div>
+
+          <button onclick="switchStudio('chat')" data-studio="chat" class="nav-btn w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-semibold transition bg-electricBlue/20 text-neonCyan border border-neonCyan/30">
+            <i class="fa-solid fa-comments w-4 text-center"></i>
+            <span data-i18n="nav_chat">Advanced AI Chat</span>
+          </button>
+
+          <button onclick="switchStudio('voice')" data-studio="voice" class="nav-btn w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-semibold text-slate-300 hover:bg-midnightBlue/70 hover:text-neonCyan transition">
+            <i class="fa-solid fa-microphone-lines w-4 text-center text-neonCyan"></i>
+            <span data-i18n="nav_voice">Fast Smart Voice AI</span>
+            <span class="ml-auto text-[9px] px-1.5 py-0.5 rounded bg-neonCyan/20 text-neonCyan">LIVE</span>
+          </button>
+
+          <button onclick="switchStudio('research')" data-studio="research" class="nav-btn w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-semibold text-slate-300 hover:bg-midnightBlue/70 hover:text-neonCyan transition">
+            <i class="fa-solid fa-globe w-4 text-center text-electricBlue"></i>
+            <span data-i18n="nav_research">Deep Research AI</span>
+          </button>
+
+          <button onclick="switchStudio('agent')" data-studio="agent" class="nav-btn w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-semibold text-slate-300 hover:bg-midnightBlue/70 hover:text-neonCyan transition">
+            <i class="fa-solid fa-robot w-4 text-center text-aiPurple"></i>
+            <span data-i18n="nav_agent">AI Agent Mode</span>
+          </button>
+
+          <div class="pt-2 pb-1 px-3 text-[10px] font-bold uppercase tracking-widest text-slate-400">
+            Creative & Dev Studios
+          </div>
+
+          <button onclick="switchStudio('image')" data-studio="image" class="nav-btn w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-semibold text-slate-300 hover:bg-midnightBlue/70 hover:text-neonCyan transition">
+            <i class="fa-solid fa-wand-magic-sparkles w-4 text-center text-pink-400"></i>
+            <span data-i18n="nav_image">AI Image Studio</span>
+          </button>
+
+          <button onclick="switchStudio('video')" data-studio="video" class="nav-btn w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-semibold text-slate-300 hover:bg-midnightBlue/70 hover:text-neonCyan transition">
+            <i class="fa-solid fa-film w-4 text-center text-amber-400"></i>
+            <span data-i18n="nav_video">AI Video Studio</span>
+          </button>
+
+          <button onclick="switchStudio('coding')" data-studio="coding" class="nav-btn w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-semibold text-slate-300 hover:bg-midnightBlue/70 hover:text-neonCyan transition">
+            <i class="fa-solid fa-code w-4 text-center text-emerald-400"></i>
+            <span data-i18n="nav_coding">AI Coding Studio</span>
+          </button>
+
+          <button onclick="switchStudio('document')" data-studio="document" class="nav-btn w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-semibold text-slate-300 hover:bg-midnightBlue/70 hover:text-neonCyan transition">
+            <i class="fa-solid fa-file-lines w-4 text-center text-sky-400"></i>
+            <span data-i18n="nav_document">AI Document Studio</span>
+          </button>
+
+          <div class="pt-2 pb-1 px-3 text-[10px] font-bold uppercase tracking-widest text-slate-400">
+            Academy & Enterprise
+          </div>
+
+          <button onclick="switchStudio('learning')" data-studio="learning" class="nav-btn w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-semibold text-slate-300 hover:bg-midnightBlue/70 hover:text-neonCyan transition">
+            <i class="fa-solid fa-graduation-cap w-4 text-center text-indigo-400"></i>
+            <span data-i18n="nav_learning">AI Learning Center</span>
+          </button>
+
+          <button onclick="switchStudio('business')" data-studio="business" class="nav-btn w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-semibold text-slate-300 hover:bg-midnightBlue/70 hover:text-neonCyan transition">
+            <i class="fa-solid fa-briefcase w-4 text-center text-teal-400"></i>
+            <span data-i18n="nav_business">AI Business Center</span>
+          </button>
+
+          <button onclick="switchStudio('workspace')" data-studio="workspace" class="nav-btn w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-semibold text-slate-300 hover:bg-midnightBlue/70 hover:text-neonCyan transition">
+            <i class="fa-solid fa-user-astronaut w-4 text-center text-cyan-300"></i>
+            <span data-i18n="nav_workspace">Personal Workspace</span>
+          </button>
+
+          <button onclick="switchStudio('admin')" data-studio="admin" class="nav-btn w-full flex items-center gap-3 px-3 py-2.5 rounded-xl text-xs font-semibold text-slate-300 hover:bg-midnightBlue/70 hover:text-neonCyan transition">
+            <i class="fa-solid fa-shield-halved w-4 text-center text-rose-400"></i>
+            <span data-i18n="nav_admin">Admin & API Vault</span>
+          </button>
+        </div>
+
+        <!-- Sidebar Bottom Card -->
+        <div class="mt-4 p-3 rounded-2xl bg-gradient-to-br from-midnightBlue to-deepBlack border border-neonCyan/20">
+          <div class="flex items-center justify-between mb-1.5">
+            <span class="text-[11px] font-bold text-neonCyan">Active Engine</span>
+            <span class="text-[10px] px-1.5 py-0.5 rounded bg-emerald-500/20 text-emerald-400">ONLINE</span>
+          </div>
+          <p id="sidebar-active-model" class="text-xs font-semibold text-iceWhite truncate">Gemini 3 Flash (Live)</p>
+          <p id="sidebar-active-mode" class="text-[10px] text-slate-400 mt-0.5">Mode: Smart Mode</p>
+        </div>
+      </aside>
+
+      <!-- MAIN CONTENT AREA -->
+      <main class="flex-1 p-3 sm:p-6 overflow-y-auto max-w-full">
+        
+        <!-- ==================== STUDIO 1: ADVANCED AI CHAT ==================== -->
+        <section id="studio-chat" class="studio-view space-y-4">
+          <div class="flex flex-col lg:flex-row gap-4 h-[calc(100vh-115px)] min-h-[580px]">
+            
+            <!-- Left Conversation & Folders Drawer -->
+            <div class="w-full lg:w-72 glass-card rounded-2xl p-3 flex flex-col justify-between shrink-0">
+              <div class="space-y-3 overflow-y-auto">
+                <div class="flex items-center justify-between">
+                  <h2 class="text-sm font-bold flex items-center gap-2">
+                    <i class="fa-solid fa-layer-group text-neonCyan"></i>
+                    <span data-i18n="chat_threads">Conversations</span>
+                  </h2>
+                  <button onclick="createNewChat()" class="neon-btn px-3 py-1.5 rounded-xl text-xs flex items-center gap-1.5">
+                    <i class="fa-solid fa-plus"></i> New
+                  </button>
+                </div>
+
+                <!-- Search Conversations -->
+                <div class="relative">
+                  <i class="fa-solid fa-magnifying-glass absolute left-3 top-2.5 text-xs text-slate-400"></i>
+                  <input type="text" id="chat-search-input" oninput="renderChatList()" placeholder="Search chats..." class="w-full bg-deepBlack/60 border border-neonCyan/20 rounded-xl pl-8 pr-3 py-1.5 text-xs focus:outline-none focus:border-neonCyan" />
+                </div>
+
+                <!-- Folders Filter -->
+                <div class="flex gap-1.5 overflow-x-auto pb-1">
+                  <button onclick="filterChatFolder('All')" class="folder-pill px-2.5 py-1 rounded-lg text-[11px] font-semibold bg-electricBlue/30 text-neonCyan border border-neonCyan/30">All</button>
+                  <button onclick="filterChatFolder('Work')" class="folder-pill px-2.5 py-1 rounded-lg text-[11px] font-semibold bg-midnightBlue/60 text-slate-400 hover:text-white">Work</button>
+                  <button onclick="filterChatFolder('Coding')" class="folder-pill px-2.5 py-1 rounded-lg text-[11px] font-semibold bg-midnightBlue/60 text-slate-400 hover:text-white">Coding</button>
+                  <button onclick="filterChatFolder('Sinhala')" class="folder-pill px-2.5 py-1 rounded-lg text-[11px] font-semibold bg-midnightBlue/60 text-slate-400 hover:text-white">සිංහල</button>
+                </div>
+
+                <!-- Thread List -->
+                <div id="chat-thread-list" class="space-y-1.5 max-h-56 lg:max-h-[340px] overflow-y-auto pr-1"></div>
+              </div>
+
+              <!-- Custom System Instructions & AI Memory -->
+              <div class="pt-3 border-t border-neonCyan/15 space-y-2">
+                <div class="flex items-center justify-between text-xs">
+                  <span class="text-slate-400 flex items-center gap-1.5"><i class="fa-solid fa-brain text-aiPurple"></i> AI Memory</span>
+                  <label class="relative inline-flex items-center cursor-pointer">
+                    <input type="checkbox" id="ai-memory-toggle" checked class="sr-only peer" onchange="showToast('AI Long-Term Memory updated', 'info')">
+                    <div class="w-8 h-4 bg-slate-700 peer-focus:outline-none rounded-full peer peer-checked:after:translate-x-full peer-checked:bg-neonCyan after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:rounded-full after:h-3 after:w-3 after:transition-all"></div>
+                  </label>
+                </div>
+                <button onclick="toggleSystemPromptModal()" class="w-full py-1.5 px-2.5 rounded-xl bg-midnightBlue/80 hover:bg-electricBlue/20 border border-neonCyan/20 text-[11px] font-semibold text-left flex items-center justify-between">
+                  <span><i class="fa-solid fa-sliders text-neonCyan mr-1.5"></i> Custom Instructions</span>
+                  <i class="fa-solid fa-chevron-right text-[10px]"></i>
+                </button>
+              </div>
+            </div>
+
+            <!-- Main Chat Stream Panel -->
+            <div class="flex-1 glass-card rounded-2xl flex flex-col overflow-hidden">
+              <!-- Chat Header Bar -->
+              <div class="px-4 py-3 border-b border-neonCyan/15 flex flex-wrap items-center justify-between gap-2 bg-midnightBlue/40">
+                <div class="flex items-center gap-2">
+                  <h3 id="current-chat-title" class="font-bold text-sm">Welcome to FAST SMART AI</h3>
+                  <select id="current-chat-folder" onchange="changeCurrentChatFolder(this.value)" class="bg-deepBlack/60 border border-neonCyan/20 rounded-lg px-2 py-0.5 text-[11px] text-neonCyan">
+                    <option value="Work">📁 Work</option>
+                    <option value="Coding">💻 Coding</option>
+                    <option value="Sinhala">🇱🇰 Sinhala</option>
+                  </select>
+                </div>
+                <div class="flex items-center gap-1.5">
+                  <button onclick="runMultiModelComparison()" class="px-2.5 py-1.5 rounded-xl bg-aiPurple/20 hover:bg-aiPurple/30 border border-aiPurple/40 text-aiPurple text-xs font-semibold flex items-center gap-1.5" title="Compare Gemini vs Smart Reasoning">
+                    <i class="fa-solid fa-code-compare"></i>
+                    <span class="hidden sm:inline">Compare Models</span>
+                  </button>
+                  <button onclick="shareCurrentChat()" class="p-2 rounded-xl bg-midnightBlue/70 hover:text-neonCyan border border-neonCyan/20 text-xs" title="Share / Copy Conversation">
+                    <i class="fa-solid fa-share-nodes"></i>
+                  </button>
+                  <button onclick="exportChatPDF()" class="p-2 rounded-xl bg-midnightBlue/70 hover:text-neonCyan border border-neonCyan/20 text-xs" title="Export to PDF/Print">
+                    <i class="fa-solid fa-file-pdf"></i>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Messages Feed -->
+              <div id="chat-messages-container" class="flex-1 p-4 overflow-y-auto space-y-4">
+                <!-- Initial Hero Greeting -->
+                <div class="max-w-2xl mx-auto text-center py-6 space-y-3">
+                  <div class="w-14 h-14 mx-auto rounded-2xl bg-gradient-to-tr from-electricBlue to-neonCyan flex items-center justify-center shadow-[0_0_25px_rgba(0,229,255,0.4)]">
+                    <i class="fa-solid fa-sparkles text-2xl text-deepBlack"></i>
+                  </div>
+                  <h2 class="text-xl sm:text-2xl font-extrabold neon-text" data-i18n="hero_welcome">FAST SMART AI — Next-Gen Intelligence</h2>
+                  <p class="text-xs sm:text-sm text-slate-400">Created by Oneth • Ask anything in English or සිංහල, upload documents/images, enhance prompts, or compare AI responses.</p>
+                  <div class="grid grid-cols-1 sm:grid-cols-2 gap-2 pt-2 text-left">
+                    <button onclick="quickPrompt('Explain Quantum Computing in simple terms with real-world examples.')" class="p-3 rounded-xl bg-midnightBlue/60 hover:bg-electricBlue/20 border border-neonCyan/20 text-xs transition">
+                      <span class="text-neonCyan font-bold block mb-0.5">⚡ Quantum Physics</span>
+                      Explain Quantum Computing simply
+                    </button>
+                    <button onclick="quickPrompt('ශ්‍රී ලංකාවේ තාක්ෂණික අනාගතය සහ AI භාවිතය ගැන සිංහලෙන් විස්තර කරන්න.')" class="p-3 rounded-xl bg-midnightBlue/60 hover:bg-electricBlue/20 border border-neonCyan/20 text-xs transition">
+                      <span class="text-neonCyan font-bold block mb-0.5">🇱🇰 සිංහල AI සහායක</span>
+                      ශ්‍රී ලංකාවේ AI තාක්ෂණික අනාගතය
+                    </button>
+                    <button onclick="quickPrompt('Write a high-converting SaaS startup pitch and 30-day growth strategy.')" class="p-3 rounded-xl bg-midnightBlue/60 hover:bg-electricBlue/20 border border-neonCyan/20 text-xs transition">
+                      <span class="text-aiPurple font-bold block mb-0.5">🚀 Startup Strategy</span>
+                      Generate a SaaS pitch & growth plan
+                    </button>
+                    <button onclick="quickPrompt('Build a clean Python FastAPI endpoint with JWT authentication and rate limiting.')" class="p-3 rounded-xl bg-midnightBlue/60 hover:bg-electricBlue/20 border border-neonCyan/20 text-xs transition">
+                      <span class="text-emerald-400 font-bold block mb-0.5">💻 Secure Backend</span>
+                      FastAPI with JWT & Rate Limiting
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Attached File Preview Pill -->
+              <div id="chat-attachment-bar" class="hidden px-4 py-2 bg-midnightBlue/80 border-t border-neonCyan/20 flex items-center justify-between text-xs">
+                <div class="flex items-center gap-2 text-neonCyan">
+                  <i class="fa-solid fa-paperclip"></i>
+                  <span id="chat-attachment-name" class="font-semibold truncate max-w-xs">file.txt</span>
+                </div>
+                <button onclick="clearChatAttachment()" class="text-rose-400 hover:text-rose-300"><i class="fa-solid fa-xmark"></i></button>
+              </div>
+
+              <!-- Chat Input Box -->
+              <div class="p-3 border-t border-neonCyan/15 bg-midnightBlue/50">
+                <div class="flex items-end gap-2">
+                  <!-- File Upload Button (Images, TXT, PDF/DOCX text) -->
+                  <label class="p-3 rounded-xl bg-midnightBlue hover:bg-electricBlue/20 border border-neonCyan/20 text-neonCyan cursor-pointer transition shrink-0" title="Upload Image, TXT, MD, CSV, JSON">
+                    <i class="fa-solid fa-paperclip"></i>
+                    <input type="file" id="chat-file-input" class="hidden" accept="image/*,.txt,.md,.csv,.json,.js,.py,.html" onchange="handleChatFileUpload(event)" />
+                  </label>
+
+                  <!-- Prompt Enhancer Button -->
+                  <button onclick="enhanceChatPrompt()" class="p-3 rounded-xl bg-aiPurple/20 hover:bg-aiPurple/35 border border-aiPurple/40 text-aiPurple transition shrink-0" title="AI Prompt Enhancer">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i>
+                  </button>
+
+                  <textarea id="chat-input" rows="1" placeholder="Message FAST SMART AI (English or සිංහල)..." onkeydown="handleChatKeydown(event)" class="flex-1 bg-deepBlack/70 border border-neonCyan/25 rounded-xl px-3.5 py-2.5 text-sm focus:outline-none focus:border-neonCyan resize-none max-h-32"></textarea>
+
+                  <!-- Stop Generation Button (Hidden until generating) -->
+                  <button id="chat-stop-btn" onclick="stopChatGeneration()" class="hidden px-4 py-3 rounded-xl bg-rose-600 hover:bg-rose-500 text-white font-bold text-xs shrink-0">
+                    <i class="fa-solid fa-stop"></i>
+                  </button>
+
+                  <!-- Send Button -->
+                  <button id="chat-send-btn" onclick="sendChatMessage()" class="neon-btn px-4 py-3 rounded-xl text-sm shrink-0 flex items-center gap-1.5">
+                    <i class="fa-solid fa-paper-plane"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================== STUDIO 2: FAST SMART VOICE AI ==================== -->
+        <section id="studio-voice" class="studio-view hidden space-y-6">
+          <div class="glass-card rounded-3xl p-6 sm:p-8 max-w-4xl mx-auto text-center relative overflow-hidden">
+            <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-neonCyan/15 border border-neonCyan/30 text-neonCyan text-xs font-bold mb-4">
+              <i class="fa-solid fa-wave-square"></i> Real-Time Neural Voice Engine (Sinhala & Multilingual)
+            </div>
+            <h2 class="text-2xl sm:text-3xl font-extrabold neon-text mb-2">FAST SMART VOICE AI</h2>
+            <p class="text-xs sm:text-sm text-slate-400 max-w-xl mx-auto mb-8">
+              Speak naturally in English or Sinhala (සිංහල). Full real-time Speech-to-Text, Gemini AI reasoning, and Neural Text-to-Speech with instant interruption control.
+            </p>
+
+            <!-- Voice Controls Bar -->
+            <div class="flex flex-wrap justify-center gap-3 mb-8">
+              <select id="voice-lang-select" class="bg-midnightBlue border border-neonCyan/30 rounded-xl px-3 py-2 text-xs font-semibold">
+                <option value="en-US">🇺🇸 English (US Neural)</option>
+                <option value="si-LK">🇱🇰 සිංහල (Sinhala - Sri Lanka)</option>
+                <option value="en-GB">🇬🇧 English (UK Studio)</option>
+                <option value="hi-IN">🇮🇳 Hindi (India)</option>
+                <option value="ja-JP">🇯🇵 Japanese</option>
+              </select>
+
+              <select id="voice-persona-select" class="bg-midnightBlue border border-aiPurple/30 rounded-xl px-3 py-2 text-xs font-semibold">
+                <option value="default">🎙️ Default Neural Voice</option>
+                <option value="female">👩 Nova (Warm & Clear)</option>
+                <option value="male">👨 Orion (Deep & Executive)</option>
+              </select>
+
+              <label class="flex items-center gap-2 bg-midnightBlue border border-neonCyan/20 rounded-xl px-3 py-2 text-xs font-semibold cursor-pointer">
+                <input type="checkbox" id="voice-continuous-mode" checked class="accent-neonCyan">
+                <span>Continuous Conversation</span>
+              </label>
+            </div>
+
+            <!-- Interactive Glowing Voice Orb -->
+            <div class="relative w-44 h-44 mx-auto my-6 flex items-center justify-center">
+              <div id="voice-orb" onclick="toggleVoiceListening()" class="voice-orb w-36 h-36 rounded-full flex flex-col items-center justify-center cursor-pointer select-none">
+                <i id="voice-orb-icon" class="fa-solid fa-microphone text-4xl text-deepBlack mb-1"></i>
+                <span id="voice-orb-label" class="text-[11px] font-extrabold text-deepBlack uppercase tracking-wider">Tap to Speak</span>
+              </div>
+            </div>
+
+            <p id="voice-status-text" class="text-sm font-semibold text-neonCyan mb-6">Ready • Click the orb to start speaking</p>
+
+            <!-- Action Buttons -->
+            <div class="flex justify-center gap-3 mb-8">
+              <button onclick="toggleVoiceListening()" id="voice-mic-btn" class="neon-btn px-5 py-2.5 rounded-xl text-xs flex items-center gap-2">
+                <i class="fa-solid fa-microphone"></i> Start Listening
+              </button>
+              <button onclick="interruptVoiceAI()" class="px-5 py-2.5 rounded-xl bg-rose-600/20 hover:bg-rose-600/40 border border-rose-500/40 text-rose-300 text-xs font-bold flex items-center gap-2">
+                <i class="fa-solid fa-hand"></i> Interrupt AI
+              </button>
+              <button onclick="clearVoiceHistory()" class="px-4 py-2.5 rounded-xl bg-midnightBlue hover:bg-slate-800 border border-slate-700 text-xs font-semibold">
+                Clear Log
+              </button>
+            </div>
+
+            <!-- Voice Transcript History -->
+            <div class="text-left bg-deepBlack/60 border border-neonCyan/15 rounded-2xl p-4 max-h-72 overflow-y-auto space-y-3" id="voice-transcript-box">
+              <div class="text-xs text-slate-400 text-center italic">Your real-time voice conversation transcript will appear here...</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================== STUDIO 3: DEEP RESEARCH AI ==================== -->
+        <section id="studio-research" class="studio-view hidden space-y-5">
+          <div class="glass-card rounded-2xl p-5 sm:p-6">
+            <div class="flex flex-wrap items-center justify-between gap-3 mb-4">
+              <div>
+                <h2 class="text-xl font-extrabold neon-text flex items-center gap-2">
+                  <i class="fa-solid fa-globe text-neonCyan"></i> DEEP RESEARCH AI ENGINE
+                </h2>
+                <p class="text-xs text-slate-400">Live Google Search Grounding • Multi-Source Synthesis • Fact-Checking • Citation Engine</p>
+              </div>
+              <button onclick="exportResearchPDF()" class="neon-btn px-4 py-2 rounded-xl text-xs flex items-center gap-2">
+                <i class="fa-solid fa-file-pdf"></i> Export Report to PDF
+              </button>
+            </div>
+
+            <div class="flex flex-col sm:flex-row gap-2.5 mb-4">
+              <input type="text" id="research-query-input" placeholder="Enter complex research topic, URL to summarize, or claim to fact-check..." class="flex-1 bg-deepBlack/70 border border-neonCyan/30 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-neonCyan" />
+              <select id="research-type-select" class="bg-midnightBlue border border-neonCyan/30 rounded-xl px-3 py-3 text-xs font-semibold">
+                <option value="comprehensive">📊 Comprehensive Report</option>
+                <option value="compare">⚖️ Source Comparison Matrix</option>
+                <option value="factcheck">✅ Fact-Checking Analysis</option>
+                <option value="summary">📝 Executive Summary</option>
+              </select>
+              <button onclick="runDeepResearch()" id="research-run-btn" class="neon-btn px-6 py-3 rounded-xl text-xs flex items-center justify-center gap-2">
+                <i class="fa-solid fa-magnifying-glass-chart"></i> Research
+              </button>
+            </div>
+
+            <!-- Research Output & Citations -->
+            <div id="printable-area" class="grid grid-cols-1 lg:grid-cols-3 gap-4 mt-4">
+              <div class="lg:col-span-2 bg-deepBlack/50 border border-neonCyan/15 rounded-2xl p-5 min-h-[380px]">
+                <h3 class="text-xs font-bold uppercase tracking-wider text-neonCyan mb-3">Synthesized Intelligence Report</h3>
+                <div id="research-report-output" class="markdown-body text-sm text-slate-200">
+                  <p class="text-slate-400 italic">Enter a topic above to search live web sources, cross-verify facts, and generate an academic/executive grade report with citations.</p>
+                </div>
+              </div>
+
+              <div class="space-y-4">
+                <!-- Verified Grounding Citations -->
+                <div class="bg-deepBlack/50 border border-neonCyan/15 rounded-2xl p-4">
+                  <h3 class="text-xs font-bold uppercase tracking-wider text-emerald-400 mb-3 flex items-center gap-1.5">
+                    <i class="fa-solid fa-link"></i> Verified Sources & Citations
+                  </h3>
+                  <div id="research-citations-list" class="space-y-2 text-xs text-slate-400">
+                    <p class="italic">Live source links will populate automatically upon research completion.</p>
+                  </div>
+                </div>
+
+                <!-- Research Scratchpad Notes -->
+                <div class="bg-deepBlack/50 border border-aiPurple/25 rounded-2xl p-4">
+                  <div class="flex items-center justify-between mb-2">
+                    <h3 class="text-xs font-bold uppercase tracking-wider text-aiPurple">Research Notes</h3>
+                    <button onclick="saveResearchNotes()" class="text-[11px] text-neonCyan hover:underline">Save Note</button>
+                  </div>
+                  <textarea id="research-notes-area" rows="6" placeholder="Jot down key findings, quotes, or hypotheses..." class="w-full bg-midnightBlue/60 border border-aiPurple/20 rounded-xl p-2.5 text-xs focus:outline-none focus:border-aiPurple"></textarea>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================== STUDIO 4: AI AGENT MODE ==================== -->
+        <section id="studio-agent" class="studio-view hidden space-y-5">
+          <div class="glass-card rounded-2xl p-5 sm:p-6">
+            <div class="flex flex-wrap items-center justify-between gap-3 mb-4">
+              <div>
+                <h2 class="text-xl font-extrabold neon-text flex items-center gap-2">
+                  <i class="fa-solid fa-robot text-aiPurple"></i> AUTONOMOUS AI AGENT WORKSPACE
+                </h2>
+                <p class="text-xs text-slate-400">Multi-Step Task Decomposition • Human-in-the-Loop Approval Gate • Live Execution Tracker</p>
+              </div>
+              <label class="flex items-center gap-2 bg-midnightBlue/80 border border-amber-500/30 px-3 py-1.5 rounded-xl text-xs text-amber-300 font-semibold cursor-pointer">
+                <input type="checkbox" id="agent-approval-required" checked class="accent-amber-400">
+                <span>Require Approval Before Critical Actions</span>
+              </label>
+            </div>
+
+            <div class="flex flex-col sm:flex-row gap-2.5 mb-6">
+              <input type="text" id="agent-goal-input" placeholder="Define a complex mission (e.g., 'Plan and structure a complete AI EdTech startup launch in Sri Lanka')..." class="flex-1 bg-deepBlack/70 border border-aiPurple/35 rounded-xl px-4 py-3 text-sm focus:outline-none focus:border-aiPurple" />
+              <button onclick="startAgentMission()" class="purple-neon-btn px-6 py-3 rounded-xl text-xs flex items-center justify-center gap-2">
+                <i class="fa-solid fa-play"></i> Launch Agent
+              </button>
+            </div>
+
+            <!-- Agent Progress Bar -->
+            <div class="mb-6 bg-deepBlack/60 p-4 rounded-2xl border border-neonCyan/15">
+              <div class="flex justify-between text-xs font-semibold mb-2">
+                <span id="agent-status-label" class="text-neonCyan">Agent Idle — Awaiting Mission</span>
+                <span id="agent-progress-percent" class="font-mono">0%</span>
+              </div>
+              <div class="w-full h-2.5 bg-midnightBlue rounded-full overflow-hidden">
+                <div id="agent-progress-bar" class="h-full bg-gradient-to-r from-aiPurple via-electricBlue to-neonCyan transition-all duration-500" style="width: 0%;"></div>
+              </div>
+            </div>
+
+            <!-- Approval Banner (Shown when paused for user approval) -->
+            <div id="agent-approval-banner" class="hidden mb-6 p-4 rounded-2xl bg-amber-500/15 border border-amber-400/50 flex flex-col sm:flex-row items-center justify-between gap-3">
+              <div class="flex items-center gap-3">
+                <i class="fa-solid fa-triangle-exclamation text-2xl text-amber-400"></i>
+                <div>
+                  <h4 class="text-sm font-bold text-amber-300">Human Approval Required</h4>
+                  <p id="agent-approval-desc" class="text-xs text-slate-300">Agent is ready to execute the next critical step.</p>
+                </div>
+              </div>
+              <div class="flex gap-2">
+                <button onclick="approveAgentStep()" class="px-4 py-2 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-deepBlack font-bold text-xs">
+                  <i class="fa-solid fa-check mr-1"></i> Approve & Continue
+                </button>
+                <button onclick="abortAgentMission()" class="px-4 py-2 rounded-xl bg-rose-600/30 border border-rose-500 text-rose-200 font-bold text-xs">
+                  Abort
+                </button>
+              </div>
+            </div>
+
+            <!-- Steps & Execution Output Grid -->
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+              <div class="bg-deepBlack/50 border border-neonCyan/15 rounded-2xl p-4">
+                <h3 class="text-xs font-bold uppercase tracking-wider text-slate-400 mb-3">Execution Plan Steps</h3>
+                <div id="agent-steps-list" class="space-y-2.5 text-xs">
+                  <p class="text-slate-500 italic">No active mission steps.</p>
+                </div>
+              </div>
+              <div class="lg:col-span-2 bg-deepBlack/50 border border-neonCyan/15 rounded-2xl p-4">
+                <h3 class="text-xs font-bold uppercase tracking-wider text-neonCyan mb-3">Agent Execution Logs & Deliverables</h3>
+                <div id="agent-output-feed" class="space-y-3 max-h-[420px] overflow-y-auto markdown-body text-sm">
+                  <p class="text-slate-500 italic">Agent deliverables will stream step-by-step here.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================== STUDIO 5: AI IMAGE & CREATIVE STUDIO ==================== -->
+        <section id="studio-image" class="studio-view hidden space-y-5">
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-5">
+            <!-- Left Controls -->
+            <div class="glass-card rounded-2xl p-5 space-y-4">
+              <h2 class="text-lg font-extrabold neon-text flex items-center gap-2">
+                <i class="fa-solid fa-wand-magic-sparkles text-pink-400"></i> AI IMAGE STUDIO
+              </h2>
+              <p class="text-xs text-slate-400">Powered by Gemini 3.1 Flash Image Engine • Text-to-Image, Style Presets & Vision Analysis</p>
+
+              <div>
+                <div class="flex justify-between items-center mb-1">
+                  <label class="text-xs font-bold text-slate-300">Image Prompt</label>
+                  <button onclick="enhanceImagePrompt()" class="text-[11px] text-neonCyan hover:underline"><i class="fa-solid fa-sparkles"></i> Enhance Prompt</button>
+                </div>
+                <textarea id="image-prompt-input" rows="3" placeholder="Describe your vision (e.g., 'Futuristic cyberpunk Colombo skyline at night with neon cyan flying vehicles, ultra-detailed 8k')..." class="w-full bg-deepBlack/70 border border-neonCyan/25 rounded-xl p-3 text-xs focus:outline-none focus:border-neonCyan"></textarea>
+              </div>
+
+              <div class="grid grid-cols-2 gap-2.5">
+                <div>
+                  <label class="text-[11px] font-bold text-slate-400 block mb-1">Art Style</label>
+                  <select id="image-style-select" class="w-full bg-midnightBlue border border-neonCyan/25 rounded-xl px-2.5 py-2 text-xs">
+                    <option value="Photorealistic, 8k ultra detailed">📸 Photorealistic</option>
+                    <option value="Cyberpunk neon futuristic digital art">🌃 Cyberpunk Neon</option>
+                    <option value="3D Octane Render, cinema4d">🧊 3D Render</option>
+                    <option value="Anime Makoto Shinkai masterpiece style">🎌 Anime Art</option>
+                    <option value="Oil painting on canvas, classical texture">🎨 Oil Painting</option>
+                    <option value="Minimalist vector logo design">✒️ Vector / Logo</option>
+                  </select>
+                </div>
+                <div>
+                  <label class="text-[11px] font-bold text-slate-400 block mb-1">Aspect Ratio</label>
+                  <select id="image-ratio-select" class="w-full bg-midnightBlue border border-neonCyan/25 rounded-xl px-2.5 py-2 text-xs">
+                    <option value="1:1">1:1 Square</option>
+                    <option value="16:9">16:9 Widescreen</option>
+                    <option value="9:16">9:16 Vertical / Mobile</option>
+                  </select>
+                </div>
+              </div>
+
+              <button onclick="generateAIImage()" id="generate-img-btn" class="w-full neon-btn py-3 rounded-xl text-xs flex items-center justify-center gap-2">
+                <i class="fa-solid fa-paintbrush"></i> Generate Artwork
+              </button>
+
+              <!-- Image Understanding / Vision Analyzer -->
+              <div class="pt-4 border-t border-neonCyan/15 space-y-2.5">
+                <h3 class="text-xs font-bold text-aiPurple flex items-center gap-1.5">
+                  <i class="fa-solid fa-eye"></i> AI Image Understanding & Vision
+                </h3>
+                <input type="file" id="vision-file-input" accept="image/*" onchange="analyzeUploadedImage(event)" class="w-full text-xs text-slate-400 file:mr-3 file:py-1.5 file:px-3 file:rounded-xl file:border-0 file:text-xs file:font-semibold file:bg-aiPurple/20 file:text-aiPurple hover:file:bg-aiPurple/30" />
+                <div id="vision-analysis-result" class="text-xs text-slate-300 bg-deepBlack/50 p-3 rounded-xl border border-aiPurple/20 hidden markdown-body"></div>
+              </div>
+            </div>
+
+            <!-- Right Image Stage & Gallery -->
+            <div class="lg:col-span-2 glass-card rounded-2xl p-5 flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between mb-3">
+                  <h3 class="text-xs font-bold uppercase tracking-wider text-neonCyan">Generated Canvas & Gallery</h3>
+                  <button id="download-img-btn" onclick="downloadCurrentImage()" class="hidden px-3 py-1.5 rounded-xl bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 text-xs font-semibold">
+                    <i class="fa-solid fa-download mr-1"></i> Download PNG
+                  </button>
+                </div>
+
+                <!-- Main Image Viewport -->
+                <div id="image-stage" class="w-full h-80 sm:h-96 rounded-2xl bg-deepBlack/70 border border-neonCyan/20 flex items-center justify-center overflow-hidden relative">
+                  <div id="image-placeholder" class="text-center p-6">
+                    <i class="fa-solid fa-image text-4xl text-slate-600 mb-2"></i>
+                    <p class="text-xs text-slate-400">Your AI-generated artwork will appear here in high resolution.</p>
+                  </div>
+                  <div id="image-loader" class="hidden flex flex-col items-center gap-3">
+                    <div class="w-12 h-12 border-4 border-neonCyan border-t-transparent rounded-full animate-spin"></div>
+                    <p class="text-xs text-neonCyan font-semibold animate-pulse">Synthesizing pixels with Gemini Vision...</p>
+                  </div>
+                  <img id="generated-image-preview" class="hidden max-h-full max-w-full object-contain rounded-xl" alt="Generated AI Art" />
+                </div>
+              </div>
+
+              <!-- Mini Gallery Thumbnails -->
+              <div class="mt-4">
+                <p class="text-[11px] font-bold text-slate-400 mb-2">Session Gallery</p>
+                <div id="image-gallery-strip" class="flex gap-2.5 overflow-x-auto pb-1 min-h-[64px]">
+                  <span class="text-xs text-slate-500 italic self-center">Generated images appear in your gallery strip.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================== STUDIO 6: AI VIDEO STUDIO ==================== -->
+        <section id="studio-video" class="studio-view hidden space-y-5">
+          <div class="glass-card rounded-2xl p-5 sm:p-6">
+            <div class="flex flex-wrap items-center justify-between gap-3 mb-4">
+              <div>
+                <h2 class="text-xl font-extrabold neon-text flex items-center gap-2">
+                  <i class="fa-solid fa-film text-amber-400"></i> AI VIDEO & STORYBOARD STUDIO
+                </h2>
+                <p class="text-xs text-slate-400">AI Video Prompt Engineering • Scene-by-Scene Storyboards • SRT Subtitle Generator • Video Concept Analyzer</p>
+              </div>
+              <span class="px-3 py-1 rounded-xl bg-amber-500/15 border border-amber-500/30 text-amber-300 text-xs font-semibold">
+                <i class="fa-solid fa-clapperboard mr-1"></i> Director Engine Active
+              </span>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+              <div class="space-y-3 bg-deepBlack/50 p-4 rounded-2xl border border-neonCyan/15">
+                <label class="text-xs font-bold text-slate-300 block">Video Tool Mode</label>
+                <select id="video-tool-mode" class="w-full bg-midnightBlue border border-neonCyan/30 rounded-xl px-3 py-2.5 text-xs font-semibold">
+                  <option value="storyboard">🎬 Text-to-Video Storyboard & Camera Prompts</option>
+                  <option value="prompt">✨ Cinema Prompt Generator (Sora/Runway/Veo)</option>
+                  <option value="subtitles">💬 Auto-Generate .SRT Subtitles from Script</option>
+                  <option value="summarize">📊 Video Script / Transcript Summarizer</option>
+                </select>
+
+                <label class="text-xs font-bold text-slate-300 block">Concept, Script, or Video Description</label>
+                <textarea id="video-input-text" rows="5" placeholder="Describe your video scene, paste a transcript for summarization, or enter dialogue for .SRT subtitle generation..." class="w-full bg-deepBlack/80 border border-neonCyan/25 rounded-xl p-3 text-xs focus:outline-none focus:border-neonCyan"></textarea>
+
+                <button onclick="runVideoStudio()" class="w-full neon-btn py-3 rounded-xl text-xs flex items-center justify-center gap-2">
+                  <i class="fa-solid fa-video"></i> Generate Video Production Package
+                </button>
+              </div>
+
+              <div class="lg:col-span-2 bg-deepBlack/50 p-5 rounded-2xl border border-neonCyan/15 flex flex-col justify-between">
+                <div>
+                  <div class="flex justify-between items-center mb-3">
+                    <h3 class="text-xs font-bold uppercase tracking-wider text-amber-400">Production Output / Storyboard / SRT</h3>
+                    <button onclick="copyElementText('video-studio-output')" class="text-xs text-neonCyan hover:underline"><i class="fa-solid fa-copy"></i> Copy Output</button>
+                  </div>
+                  <div id="video-studio-output" class="markdown-body text-sm text-slate-200 max-h-[380px] overflow-y-auto">
+                    <p class="text-slate-400 italic">Select a video production tool on the left and enter your concept to generate camera angles, lighting prompts, or formatted .SRT subtitle files.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================== STUDIO 7: AI CODING STUDIO ==================== -->
+        <section id="studio-coding" class="studio-view hidden space-y-4">
+          <div class="glass-card rounded-2xl p-4 sm:p-5">
+            <div class="flex flex-wrap items-center justify-between gap-2 mb-3">
+              <div>
+                <h2 class="text-lg font-extrabold neon-text flex items-center gap-2">
+                  <i class="fa-solid fa-code text-emerald-400"></i> AI CODING STUDIO & LIVE SANDBOX
+                </h2>
+                <p class="text-xs text-slate-400">Generate, Debug, Explain & Optimize Code • Live HTML/CSS/JS Previewer</p>
+              </div>
+              <div class="flex flex-wrap gap-2">
+                <button onclick="aiCodeAction('generate')" class="neon-btn px-3 py-1.5 rounded-xl text-xs"><i class="fa-solid fa-wand-sparkles mr-1"></i> Generate</button>
+                <button onclick="aiCodeAction('debug')" class="px-3 py-1.5 rounded-xl bg-rose-500/20 border border-rose-500/40 text-rose-300 text-xs font-semibold"><i class="fa-solid fa-bug mr-1"></i> Fix Bugs</button>
+                <button onclick="aiCodeAction('optimize')" class="px-3 py-1.5 rounded-xl bg-aiPurple/20 border border-aiPurple/40 text-aiPurple text-xs font-semibold"><i class="fa-solid fa-gauge-high mr-1"></i> Optimize</button>
+                <button onclick="runCodePreview()" class="px-3 py-1.5 rounded-xl bg-emerald-500/20 border border-emerald-500/40 text-emerald-300 text-xs font-semibold"><i class="fa-solid fa-play mr-1"></i> Run HTML Preview</button>
+                <button onclick="downloadCodeFile()" class="px-3 py-1.5 rounded-xl bg-midnightBlue border border-neonCyan/30 text-neonCyan text-xs font-semibold"><i class="fa-solid fa-download"></i></button>
+              </div>
+            </div>
+
+            <!-- AI Prompt Bar for Code -->
+            <div class="flex gap-2 mb-3">
+              <select id="code-lang-select" class="bg-midnightBlue border border-neonCyan/30 rounded-xl px-3 py-2 text-xs font-semibold">
+                <option value="HTML/CSS/JS">HTML / CSS / JS</option>
+                <option value="Python">Python</option>
+                <option value="JavaScript / Node.js">JavaScript / Node.js</option>
+                <option value="React JSX">React JSX</option>
+                <option value="C++">C++</option>
+                <option value="SQL">SQL</option>
+              </select>
+              <input type="text" id="code-prompt-input" placeholder="Describe what to build or modify (e.g., 'Create a neon calculator app with glowing buttons')..." class="flex-1 bg-deepBlack/70 border border-neonCyan/25 rounded-xl px-3.5 py-2 text-xs focus:outline-none focus:border-neonCyan" />
+            </div>
+
+            <!-- Split Editor + Live Preview -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 h-[460px]">
+              <div class="flex flex-col bg-[#03050A] border border-neonCyan/25 rounded-2xl overflow-hidden">
+                <div class="px-3 py-1.5 bg-midnightBlue/80 border-b border-neonCyan/15 flex justify-between items-center text-[11px] font-mono text-slate-400">
+                  <span>editor.html</span>
+                  <button onclick="copyElementValue('code-editor-textarea')" class="text-neonCyan hover:underline">Copy Code</button>
+                </div>
+                <textarea id="code-editor-textarea" spellcheck="false" class="flex-1 w-full bg-transparent text-emerald-300 font-mono text-xs p-3.5 focus:outline-none resize-none">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;style&gt;
+    body { background: #05070D; color: #00E5FF; font-family: sans-serif; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+    .card { padding: 2rem; border-radius: 1rem; border: 1px solid #00E5FF; box-shadow: 0 0 25px rgba(0,229,255,0.3); text-align: center; }
+    button { background: #0066FF; color: white; border: none; padding: 10px 20px; border-radius: 8px; cursor: pointer; font-weight: bold; }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div class="card"&gt;
+    &lt;h2&gt;FAST SMART AI Sandbox&lt;/h2&gt;
+    &lt;p&gt;Created by Oneth&lt;/p&gt;
+    &lt;button onclick="alert('Live Sandbox Active!')"&gt;Test Interaction&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;</textarea>
+              </div>
+
+              <div class="flex flex-col bg-white rounded-2xl overflow-hidden border border-neonCyan/25">
+                <div class="px-3 py-1.5 bg-slate-900 text-slate-300 text-[11px] font-mono flex justify-between items-center">
+                  <span>Live Sandbox Output</span>
+                  <span class="text-emerald-400">● Ready</span>
+                </div>
+                <iframe id="code-preview-frame" class="flex-1 w-full h-full border-0"></iframe>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================== STUDIO 8: AI DOCUMENT STUDIO ==================== -->
+        <section id="studio-document" class="studio-view hidden space-y-5">
+          <div class="glass-card rounded-2xl p-5 sm:p-6">
+            <h2 class="text-xl font-extrabold neon-text mb-1 flex items-center gap-2">
+              <i class="fa-solid fa-file-lines text-sky-400"></i> AI DOCUMENT STUDIO
+            </h2>
+            <p class="text-xs text-slate-400 mb-4">Document Summarizer • Q&A • Sinhala/English Translator • Resume, Essay & Presentation Creator</p>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-4">
+              <div class="space-y-3 bg-deepBlack/50 p-4 rounded-2xl border border-neonCyan/15">
+                <label class="text-xs font-bold block">Select Document Task</label>
+                <select id="doc-task-select" class="w-full bg-midnightBlue border border-neonCyan/30 rounded-xl px-3 py-2.5 text-xs font-semibold">
+                  <option value="summarize">📄 Executive Document Summarizer</option>
+                  <option value="translate_si">🇱🇰 Translate to Natural Sinhala (සිංහල)</option>
+                  <option value="translate_en">🇺🇸 Translate to Professional English</option>
+                  <option value="resume">👔 ATS-Optimized Resume / CV Builder</option>
+                  <option value="essay">🎓 Academic Essay Writer</option>
+                  <option value="slides">📊 Presentation Slide Deck Outline</option>
+                  <option value="spreadsheet">📈 CSV / Data Table Analyzer</option>
+                </select>
+
+                <div>
+                  <label class="text-xs font-bold block mb-1">Upload Text/CSV/MD File (Optional)</label>
+                  <input type="file" accept=".txt,.md,.csv,.json" onchange="loadDocumentFile(event)" class="w-full text-xs text-slate-400 file:mr-2 file:py-1.5 file:px-3 file:rounded-xl file:border-0 file:bg-sky-500/20 file:text-sky-300" />
+                </div>
+
+                <textarea id="doc-content-input" rows="7" placeholder="Paste your document text, CSV data, or describe the resume/essay/presentation you want created..." class="w-full bg-deepBlack/80 border border-neonCyan/25 rounded-xl p-3 text-xs focus:outline-none focus:border-neonCyan"></textarea>
+
+                <button onclick="processDocumentStudio()" class="w-full neon-btn py-3 rounded-xl text-xs">
+                  <i class="fa-solid fa-file-signature mr-1"></i> Process Document
+                </button>
+              </div>
+
+              <div class="lg:col-span-2 bg-deepBlack/50 p-5 rounded-2xl border border-neonCyan/15 flex flex-col justify-between">
+                <div>
+                  <div class="flex justify-between items-center mb-3">
+                    <h3 class="text-xs font-bold uppercase tracking-wider text-sky-400">Generated Document</h3>
+                    <div class="flex gap-2">
+                      <button onclick="copyElementText('doc-studio-output')" class="text-xs text-neonCyan hover:underline"><i class="fa-solid fa-copy"></i> Copy</button>
+                      <button onclick="downloadTextAsFile('doc-studio-output', 'FAST_SMART_AI_Document.md')" class="text-xs text-emerald-400 hover:underline"><i class="fa-solid fa-download"></i> Export .MD</button>
+                    </div>
+                  </div>
+                  <div id="doc-studio-output" class="markdown-body text-sm text-slate-200 max-h-[420px] overflow-y-auto">
+                    <p class="text-slate-400 italic">Your processed document, translation, resume, or slide deck will appear here.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================== STUDIO 9: AI LEARNING CENTER ==================== -->
+        <section id="studio-learning" class="studio-view hidden space-y-5">
+          <div class="glass-card rounded-2xl p-5 sm:p-6">
+            <h2 class="text-xl font-extrabold neon-text mb-1 flex items-center gap-2">
+              <i class="fa-solid fa-graduation-cap text-indigo-400"></i> AI LEARNING & ACADEMY CENTER
+            </h2>
+            <p class="text-xs text-slate-400 mb-4">Personal AI Tutor • Step-by-Step Math & Science • Interactive Flashcards • Live Quiz Generator</p>
+
+            <div class="flex flex-col sm:flex-row gap-2.5 mb-5">
+              <select id="learning-subject-select" class="bg-midnightBlue border border-indigo-400/30 rounded-xl px-3 py-2.5 text-xs font-semibold">
+                <option value="tutor">🧑‍🏫 Step-by-Step AI Tutor</option>
+                <option value="math">📐 Mathematics & Calculus Solver</option>
+                <option value="science">🔬 Physics, Chemistry & Biology</option>
+                <option value="business">💼 Business & Economics</option>
+                <option value="flashcards">🗂️ Generate Interactive Flashcards</option>
+                <option value="quiz">❓ Generate Interactive Quiz</option>
+              </select>
+              <input type="text" id="learning-topic-input" placeholder="Enter topic or homework question (e.g., 'Photosynthesis', 'Quadratic Equations', 'Sinhala Literature')..." class="flex-1 bg-deepBlack/70 border border-indigo-400/30 rounded-xl px-4 py-2.5 text-xs focus:outline-none focus:border-neonCyan" />
+              <button onclick="runLearningStudio()" class="purple-neon-btn px-6 py-2.5 rounded-xl text-xs">
+                <i class="fa-solid fa-sparkles mr-1"></i> Start Learning
+              </button>
+            </div>
+
+            <!-- Dynamic Learning Output (Supports Text, Interactive Flashcards, or Interactive Quiz) -->
+            <div id="learning-output-container" class="bg-deepBlack/50 border border-neonCyan/15 rounded-2xl p-5 min-h-[340px]">
+              <p class="text-xs text-slate-400 italic">Ask a homework question, generate a study plan, or create interactive flashcards and quizzes above!</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================== STUDIO 10: AI BUSINESS CENTER ==================== -->
+        <section id="studio-business" class="studio-view hidden space-y-5">
+          <div class="glass-card rounded-2xl p-5 sm:p-6">
+            <h2 class="text-xl font-extrabold neon-text mb-1 flex items-center gap-2">
+              <i class="fa-solid fa-briefcase text-teal-400"></i> AI BUSINESS & GROWTH CENTER
+            </h2>
+            <p class="text-xs text-slate-400 mb-4">Startup Idea Generator • 4-Quadrant SWOT Matrix • Business Plans • Marketing & Copywriting</p>
+
+            <div class="flex flex-col sm:flex-row gap-2.5 mb-5">
+              <select id="business-tool-select" class="bg-midnightBlue border border-teal-400/30 rounded-xl px-3 py-2.5 text-xs font-semibold">
+                <option value="swot">📊 4-Quadrant SWOT Analysis</option>
+                <option value="plan">🚀 Lean Business Plan Creator</option>
+                <option value="ideas">💡 High-Growth Startup Ideas</option>
+                <option value="marketing">📣 Social Media & Ad Campaign</option>
+                <option value="email">📧 High-Converting Sales Email</option>
+              </select>
+              <input type="text" id="business-topic-input" placeholder="Describe your business, product, or industry..." class="flex-1 bg-deepBlack/70 border border-teal-400/30 rounded-xl px-4 py-2.5 text-xs focus:outline-none focus:border-neonCyan" />
+              <button onclick="runBusinessStudio()" class="neon-btn px-6 py-2.5 rounded-xl text-xs">
+                <i class="fa-solid fa-chart-line mr-1"></i> Generate Strategy
+              </button>
+            </div>
+
+            <div id="business-output-container" class="bg-deepBlack/50 border border-neonCyan/15 rounded-2xl p-5 min-h-[340px] markdown-body text-sm">
+              <p class="text-xs text-slate-400 italic">Select a business tool and enter your company or idea to generate executive strategies or a visual 4-quadrant SWOT analysis.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================== STUDIO 11: PERSONAL AI WORKSPACE ==================== -->
+        <section id="studio-workspace" class="studio-view hidden space-y-5">
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-5">
+            <!-- Profile Card -->
+            <div class="glass-card rounded-2xl p-6 text-center space-y-4">
+              <div class="w-20 h-20 mx-auto rounded-2xl bg-gradient-to-br from-neonCyan via-electricBlue to-aiPurple flex items-center justify-center text-3xl font-extrabold text-deepBlack shadow-[0_0_25px_rgba(0,229,255,0.4)]">
+                O
+              </div>
+              <div>
+                <h2 class="text-xl font-extrabold">Oneth</h2>
+                <p class="text-xs text-neonCyan font-semibold">Founder & Platform Architect</p>
+                <span class="inline-block mt-1 px-2.5 py-0.5 rounded-full bg-aiPurple/20 text-aiPurple text-[10px] font-bold border border-aiPurple/30">ULTIMATE TIER</span>
+              </div>
+
+              <div class="text-left space-y-2 pt-3 border-t border-neonCyan/15 text-xs">
+                <label class="block font-bold text-slate-400">Default AI Persona / Preferences</label>
+                <textarea id="workspace-preferences" rows="3" class="w-full bg-deepBlack/70 border border-neonCyan/20 rounded-xl p-2.5 text-xs">Always provide structured, innovative, and clear responses. Support both English and Sinhala seamlessly.</textarea>
+                <button onclick="saveWorkspacePrefs()" class="w-full neon-btn py-2 rounded-xl text-xs">Save Preferences</button>
+              </div>
+            </div>
+
+            <!-- Usage Analytics & Privacy -->
+            <div class="lg:col-span-2 glass-card rounded-2xl p-6 space-y-5">
+              <h3 class="text-base font-extrabold neon-text">Usage Telemetry & Personal Controls</h3>
+              
+              <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+                <div class="p-3.5 rounded-2xl bg-deepBlack/60 border border-neonCyan/20">
+                  <p class="text-[11px] text-slate-400">Total Prompts</p>
+                  <p id="stat-prompts" class="text-2xl font-extrabold text-neonCyan mt-1">142</p>
+                </div>
+                <div class="p-3.5 rounded-2xl bg-deepBlack/60 border border-aiPurple/20">
+                  <p class="text-[11px] text-slate-400">Images Created</p>
+                  <p id="stat-images" class="text-2xl font-extrabold text-aiPurple mt-1">28</p>
+                </div>
+                <div class="p-3.5 rounded-2xl bg-deepBlack/60 border border-emerald-500/20">
+                  <p class="text-[11px] text-slate-400">Research Reports</p>
+                  <p id="stat-research" class="text-2xl font-extrabold text-emerald-400 mt-1">19</p>
+                </div>
+                <div class="p-3.5 rounded-2xl bg-deepBlack/60 border border-amber-500/20">
+                  <p class="text-[11px] text-slate-400">Saved Notes</p>
+                  <p id="stat-notes" class="text-2xl font-extrabold text-amber-400 mt-1">11</p>
+                </div>
+              </div>
+
+              <!-- Visual Activity Bars -->
+              <div class="bg-deepBlack/50 p-4 rounded-2xl border border-neonCyan/15 space-y-3">
+                <h4 class="text-xs font-bold text-slate-300">Studio Utilization Breakdown</h4>
+                <div class="space-y-2 text-xs">
+                  <div>
+                    <div class="flex justify-between mb-1"><span>Advanced Chat & Coding</span><span class="text-neonCyan">68%</span></div>
+                    <div class="w-full h-2 bg-midnightBlue rounded-full"><div class="h-full bg-neonCyan rounded-full" style="width: 68%"></div></div>
+                  </div>
+                  <div>
+                    <div class="flex justify-between mb-1"><span>Deep Research & Documents</span><span class="text-electricBlue">45%</span></div>
+                    <div class="w-full h-2 bg-midnightBlue rounded-full"><div class="h-full bg-electricBlue rounded-full" style="width: 45%"></div></div>
+                  </div>
+                  <div>
+                    <div class="flex justify-between mb-1"><span>Image & Voice Studios</span><span class="text-aiPurple">54%</span></div>
+                    <div class="w-full h-2 bg-midnightBlue rounded-full"><div class="h-full bg-aiPurple rounded-full" style="width: 54%"></div></div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Privacy & Data Management -->
+              <div class="flex flex-wrap gap-3 pt-2">
+                <button onclick="exportAllWorkspaceData()" class="px-4 py-2 rounded-xl bg-electricBlue/20 border border-electricBlue/40 text-xs font-semibold hover:bg-electricBlue/30">
+                  <i class="fa-solid fa-download mr-1.5"></i> Export All Workspace Data (JSON)
+                </button>
+                <button onclick="clearLocalWorkspaceData()" class="px-4 py-2 rounded-xl bg-rose-500/15 border border-rose-500/40 text-rose-300 text-xs font-semibold hover:bg-rose-500/25">
+                  <i class="fa-solid fa-trash mr-1.5"></i> Purge Local Session History
+                </button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ==================== STUDIO 12: ADVANCED ADMIN PANEL & SECURE API VAULT ==================== -->
+        <section id="studio-admin" class="studio-view hidden space-y-5">
+          <!-- Admin Security Gate -->
+          <div id="admin-lock-screen" class="glass-card rounded-2xl p-8 max-w-md mx-auto text-center space-y-4">
+            <div class="w-14 h-14 mx-auto rounded-2xl bg-rose-500/20 border border-rose-500/40 flex items-center justify-center text-rose-400 text-2xl">
+              <i class="fa-solid fa-lock"></i>
+            </div>
+            <h2 class="text-xl font-extrabold">Administrator Security Gate</h2>
+            <p class="text-xs text-slate-400">Enter Admin PIN to access API Key Vault, System Telemetry & Backend Proxy Generator. (Default PIN: <span class="text-neonCyan font-mono font-bold">2026</span>)</p>
+            <input type="password" id="admin-pin-input" placeholder="Enter PIN (2026)" class="w-full bg-deepBlack/80 border border-neonCyan/30 rounded-xl px-4 py-2.5 text-center font-mono text-sm tracking-widest focus:outline-none focus:border-neonCyan" />
+            <button onclick="unlockAdminPanel()" class="w-full neon-btn py-2.5 rounded-xl text-xs">Authenticate Admin</button>
+          </div>
+
+          <!-- Unlocked Admin Dashboard -->
+          <div id="admin-dashboard-content" class="hidden space-y-5">
+            <!-- Top System Health Cards -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+              <div class="glass-card p-4 rounded-2xl">
+                <div class="flex justify-between items-center text-xs text-slate-400">
+                  <span>System Health</span>
+                  <span class="text-emerald-400 font-bold">99.98%</span>
+                </div>
+                <p class="text-lg font-extrabold mt-1 text-emerald-400">OPTIMAL</p>
+                <p class="text-[11px] text-slate-400 mt-1">Latency: 142ms • Edge Active</p>
+              </div>
+              <div class="glass-card p-4 rounded-2xl">
+                <div class="flex justify-between items-center text-xs text-slate-400">
+                  <span>Security Shield</span>
+                  <i class="fa-solid fa-shield-halved text-neonCyan"></i>
+                </div>
+                <p class="text-lg font-extrabold mt-1 text-neonCyan">ZERO-EXPOSURE</p>
+                <p class="text-[11px] text-slate-400 mt-1">Keys isolated from source</p>
+              </div>
+              <div class="glass-card p-4 rounded-2xl">
+                <div class="flex justify-between items-center text-xs text-slate-400">
+                  <span>Active Models</span>
+                  <i class="fa-solid fa-microchip text-aiPurple"></i>
+                </div>
+                <p class="text-lg font-extrabold mt-1 text-aiPurple">5 Providers</p>
+                <p class="text-[11px] text-slate-400 mt-1">Gemini, GPT, Claude, DeepSeek, One</p>
+              </div>
+              <div class="glass-card p-4 rounded-2xl">
+                <div class="flex justify-between items-center text-xs text-slate-400">
+                  <span>RBAC Role</span>
+                  <i class="fa-solid fa-crown text-amber-400"></i>
+                </div>
+                <p class="text-lg font-extrabold mt-1 text-amber-400">SUPER ADMIN</p>
+                <p class="text-[11px] text-slate-400 mt-1">Owner: Oneth</p>
+              </div>
+            </div>
+
+            <!-- Secure API Key Vault + Production Backend Code Generator -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
+              <!-- Encrypted Local API Key Vault -->
+              <div class="glass-card rounded-2xl p-5 space-y-3">
+                <div class="flex items-center justify-between">
+                  <h3 class="text-sm font-extrabold text-neonCyan flex items-center gap-2">
+                    <i class="fa-solid fa-vault"></i> Secure Multi-Provider API Key Vault
+                  </h3>
+                  <span class="text-[10px] px-2 py-0.5 rounded bg-emerald-500/20 text-emerald-300">Client-Side Encrypted Vault</span>
+                </div>
+                <p class="text-xs text-slate-400">
+                  For maximum security, secret API keys are never hardcoded into public source code. Paste your keys below to store them securely in your local browser vault or export a `.env` file for your backend server.
+                </p>
+
+                <div class="space-y-2.5 text-xs">
+                  <div>
+                    <label class="font-bold text-slate-300 block mb-1">Google Gemini API Key (Built-in Live Active)</label>
+                    <input type="password" id="vault-gemini" placeholder="AIzaSy... / AQ.Ab8..." class="w-full bg-deepBlack/80 border border-neonCyan/25 rounded-xl px-3 py-2 font-mono text-xs" />
+                  </div>
+                  <div>
+                    <label class="font-bold text-slate-300 block mb-1">OpenAI ChatGPT API Key</label>
+                    <input type="password" id="vault-openai" placeholder="sk-proj-..." class="w-full bg-deepBlack/80 border border-neonCyan/25 rounded-xl px-3 py-2 font-mono text-xs" />
+                  </div>
+                  <div>
+                    <label class="font-bold text-slate-300 block mb-1">Anthropic Claude API Key</label>
+                    <input type="password" id="vault-claude" placeholder="sk-ant-..." class="w-full bg-deepBlack/80 border border-neonCyan/25 rounded-xl px-3 py-2 font-mono text-xs" />
+                  </div>
+                  <div>
+                    <label class="font-bold text-slate-300 block mb-1">DeepSeek API Key</label>
+                    <input type="password" id="vault-deepseek" placeholder="sk-..." class="w-full bg-deepBlack/80 border border-neonCyan/25 rounded-xl px-3 py-2 font-mono text-xs" />
+                  </div>
+                  <div>
+                    <label class="font-bold text-slate-300 block mb-1">One AI API Key</label>
+                    <input type="password" id="vault-oneai" placeholder="Enter One AI key..." class="w-full bg-deepBlack/80 border border-neonCyan/25 rounded-xl px-3 py-2 font-mono text-xs" />
+                  </div>
+                </div>
+
+                <div class="flex flex-wrap gap-2 pt-2">
+                  <button onclick="saveVaultKeys()" class="neon-btn px-4 py-2 rounded-xl text-xs">
+                    <i class="fa-solid fa-floppy-disk mr-1"></i> Save to Secure Vault
+                  </button>
+                  <button onclick="downloadEnvTemplate()" class="px-4 py-2 rounded-xl bg-aiPurple/20 border border-aiPurple/40 text-aiPurple text-xs font-semibold">
+                    <i class="fa-solid fa-file-code mr-1"></i> Export .env File
+                  </button>
+                </div>
+              </div>
+
+              <!-- Production Node.js / Express Backend Proxy Blueprint -->
+              <div class="glass-card rounded-2xl p-5 flex flex-col justify-between space-y-3">
+                <div>
+                  <div class="flex items-center justify-between mb-2">
+                    <h3 class="text-sm font-extrabold text-aiPurple flex items-center gap-2">
+                      <i class="fa-solid fa-server"></i> Production Node.js Backend Gateway
+                    </h3>
+                    <button onclick="copyElementValue('backend-proxy-code')" class="text-xs text-neonCyan hover:underline">Copy Server Code</button>
+                  </div>
+                  <p class="text-xs text-slate-400 mb-2">
+                    Deploy this Express backend proxy to route multi-provider AI calls (Gemini, OpenAI, Claude, DeepSeek, One AI) with rate-limiting and zero frontend key exposure:
+                  </p>
+                  <textarea id="backend-proxy-code" readonly rows="13" class="w-full bg-[#03050A] border border-aiPurple/30 rounded-xl p-3 font-mono text-[11px] text-emerald-300 focus:outline-none">import express from 'express';
+import cors from 'cors';
+import rateLimit from 'express-rate-limit';
+import dotenv from 'dotenv';
+
+dotenv.config();
+const app = express();
+app.use(cors());
+app.use(express.json({ limit: '10mb' }));
+
+// Security Rate Limiter (100 req / 15 mins)
+const apiLimiter = rateLimit({ windowMs: 15 * 60 * 1000, max: 100 });
+app.use('/api/', apiLimiter);
+
+// Unified Multi-Provider AI Gateway — Created by Oneth
+app.post('/api/ai/generate', async (req, res) => {
+  try {
+    const { provider, prompt, systemInstruction } = req.body;
+    if (provider === 'openai') {
+      const r = await fetch('https://api.openai.com/v1/chat/completions', {
+        method: 'POST',
+        headers: { 'Authorization': `Bearer ${process.env.OPENAI_API_KEY}`, 'Content-Type': 'application/json' },
+        body: JSON.stringify({ model: 'gpt-4o', messages: [{ role: 'system', content: systemInstruction }, { role: 'user', content: prompt }] })
+      });
+      return res.json(await r.json());
+    }
+    if (provider === 'deepseek') {
+      const r = await fetch('https://api.deepseek.com/chat/completions', {
+        method: 'POST',
+        headers: { 'Authorization': `Bearer ${process.env.DEEPSEEK_API_KEY}`, 'Content-Type': 'application/json' },
+        body: JSON.stringify({ model: 'deepseek-chat', messages: [{ role: 'user', content: prompt }] })
+      });
+      return res.json(await r.json());
+    }
+    res.json({ status: 'Gateway active. Configure provider route.' });
+  } catch (err) {
+    res.status(500).json({ error: 'Secure AI Gateway Error' });
+  }
+});
+
+app.listen(8080, () => console.log('FAST SMART AI Secure Server running on :8080'));</textarea>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </main>
+    </div>
+  </div>
+
+  <!-- ==================== SYSTEM INSTRUCTIONS MODAL ==================== -->
+  <div id="system-prompt-modal" class="fixed inset-0 z-40 hidden bg-black/70 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="glass-card rounded-2xl max-w-lg w-full p-6 space-y-4">
+      <div class="flex justify-between items-center">
+        <h3 class="text-base font-extrabold text-neonCyan"><i class="fa-solid fa-sliders mr-2"></i>Custom System Instructions</h3>
+        <button onclick="toggleSystemPromptModal()" class="text-slate-400 hover:text-white"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      <p class="text-xs text-slate-400">Customize how FAST SMART AI behaves, formats answers, or responds in Sinhala/English across your chat sessions.</p>
+      <textarea id="custom-system-prompt-input" rows="4" class="w-full bg-deepBlack/80 border border-neonCyan/30 rounded-xl p-3 text-xs focus:outline-none focus:border-neonCyan">You are FAST SMART AI, the ultimate next-generation AI platform created by Oneth. Be accurate, insightful, structured, and fluent in both English and Sinhala.</textarea>
+      <div class="flex justify-end gap-2">
+        <button onclick="toggleSystemPromptModal()" class="px-4 py-2 rounded-xl bg-midnightBlue text-xs">Cancel</button>
+        <button onclick="saveSystemPrompt()" class="neon-btn px-4 py-2 rounded-xl text-xs">Apply Instructions</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- ==================== JAVASCRIPT CORE ENGINE ==================== -->
+  <script>
+    // ==================== 0. API & ENVIRONMENT CONFIGURATION ====================
+    const apiKey = ""; // Runtime-injected Gemini API Key
+    const GEMINI_TEXT_MODEL = "gemini-3-flash-preview";
+    const GEMINI_IMAGE_MODEL = "gemini-3.1-flash-image";
+
+    // Global Application State
+    const appState = {
+      currentStudio: 'chat',
+      language: 'en', // 'en' or 'si'
+      activeMode: 'Smart Mode',
+      activeProvider: 'Gemini 3 Flash (Live Core)',
+      systemPrompt: 'You are FAST SMART AI, the ultimate next-generation AI platform created by Oneth. Be accurate, insightful, structured, and fluent in both English and Sinhala.',
+      conversations: [],
+      activeChatId: null,
+      folderFilter: 'All',
+      pendingAttachment: null,
+      isGenerating: false,
+      abortController: null,
+      generatedImages: [],
+      currentImageUrl: null,
+      agentMission: null,
+      agentPausedForApproval: false,
+      voiceRecognizing: false,
+      recognition: null
+    };
+
+    // ==================== 1. FUTURISTIC SPLASH & PARTICLES ====================
+    function initSplashParticles() {
+      const canvas = document.getElementById('particle-canvas');
+      if (!canvas) return;
+      const ctx = canvas.getContext('2d');
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+
+      const particles = Array.from({ length: 65 }, () => ({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        vx: (Math.random() - 0.5) * 0.8,
+        vy: (Math.random() - 0.5) * 0.8,
+        r: Math.random() * 2 + 1
+      }));
+
+      function draw() {
+        if (document.getElementById('splash-screen').style.display === 'none') return;
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        ctx.fillStyle = '#00E5FF';
+        particles.forEach((p, i) => {
+          p.x += p.vx;
+          p.y += p.vy;
+          if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
+          if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
+          ctx.beginPath();
+          ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+          ctx.fill();
+
+          for (let j = i + 1; j < particles.length; j++) {
+            const p2 = particles[j];
+            const dist = Math.hypot(p.x - p2.x, p.y - p2.y);
+            if (dist < 110) {
+              ctx.strokeStyle = `rgba(0, 229, 255, ${0.22 * (1 - dist / 110)})`;
+              ctx.lineWidth = 0.7;
+              ctx.beginPath();
+              ctx.moveTo(p.x, p.y);
+              ctx.lineTo(p2.x, p2.y);
+              ctx.stroke();
+            }
+          }
+        });
+        requestAnimationFrame(draw);
+      }
+      draw();
+    }
+
+    function runSplashProgress() {
+      let progress = 1;
+      const bar = document.getElementById('splash-bar');
+      const pct = document.getElementById('splash-percent');
+      const status = document.getElementById('splash-status');
+      const stages = [
+        { at: 15, text: 'Mounting Neural Core & Security Vault...' },
+        { at: 40, text: 'Connecting Gemini 3 Flash & Multi-Model Routers...' },
+        { at: 70, text: 'Loading Sinhala & Multilingual Voice Engines...' },
+        { at: 92, text: 'Activating 12 AI Studios...' },
+        { at: 100, text: 'FAST SMART AI Ready!' }
+      ];
+
+      const interval = setInterval(() => {
+        progress += Math.floor(Math.random() * 6) + 3;
+        if (progress >= 100) progress = 100;
+        bar.style.width = progress + '%';
+        pct.textContent = progress + '%';
+
+        const stage = stages.find(s => progress <= s.at);
+        if (stage) status.textContent = stage.text;
+
+        if (progress === 100) {
+          clearInterval(interval);
+          setTimeout(skipSplash, 350);
+        }
+      }, 55);
+    }
+
+    function skipSplash() {
+      const splash = document.getElementById('splash-screen');
+      const shell = document.getElementById('app-shell');
+      splash.style.opacity = '0';
+      shell.style.opacity = '1';
+      setTimeout(() => {
+        splash.style.display = 'none';
+      }, 650);
+    }
+
+    // ==================== 2. CORE GEMINI API HELPER (WITH EXPONENTIAL BACKOFF) ====================
+    async function callGeminiAPI({ prompt, systemInstruction = appState.systemPrompt, useSearch = false, imageBase64 = null, imageMime = null, signal = null }) {
+      const url = `https://generativelanguage.googleapis.com/v1beta/models/${GEMINI_TEXT_MODEL}:generateContent?key=${apiKey}`;
+      
+      const parts = [{ text: prompt }];
+      if (imageBase64 && imageMime) {
+        parts.push({
+          inlineData: {
+            mimeType: imageMime,
+            data: imageBase64
+          }
+        });
+      }
+
+      const modeModifier = `\n[Active Intelligence Mode: ${appState.activeMode} | Selected Provider Route: ${appState.activeProvider} | Language Preference: ${appState.language === 'si' ? 'Respond primarily in Sinhala (සිංහල) unless code/English is requested' : 'Respond in English unless Sinhala is used'}]`;
+
+      const payload = {
+        contents: [{ role: 'user', parts }],
+        systemInstruction: {
+          parts: [{ text: systemInstruction + modeModifier }]
+        }
+      };
+
+      if (useSearch) {
+        payload.tools = [{ google_search: {} }];
+      }
+
+      let delay = 1000;
+      for (let attempt = 0; attempt < 4; attempt++) {
+        try {
+          const response = await fetch(url, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(payload),
+            signal
+          });
+
+          if (!response.ok) {
+            throw new Error(`HTTP ${response.status}`);
+          }
+
+          const result = await response.json();
+          const candidate = result.candidates?.[0];
+          const text = candidate?.content?.parts?.[0]?.text || "No response generated.";
+          
+          // Extract grounding citations if search was used
+          let sources = [];
+          const attributions = candidate?.groundingMetadata?.groundingAttributions || [];
+          attributions.forEach(attr => {
+            if (attr.web?.uri && attr.web?.title) {
+              sources.push({ uri: attr.web.uri, title: attr.web.title });
+            }
+          });
+
+          return { text, sources };
+        } catch (err) {
+          if (err.name === 'AbortError') throw err;
+          if (attempt === 3) throw err;
+          await new Promise(r => setTimeout(r, delay));
+          delay *= 2;
+        }
+      }
+    }
+
+    // ==================== 3. NAVIGATION, THEME & BILINGUAL UI ====================
+    function switchStudio(studioId) {
+      appState.currentStudio = studioId;
+      document.querySelectorAll('.studio-view').forEach(el => el.classList.add('hidden'));
+      const target = document.getElementById(`studio-${studioId}`);
+      if (target) target.classList.remove('hidden');
+
+      document.querySelectorAll('.nav-btn').forEach(btn => {
+        if (btn.dataset.studio === studioId) {
+          btn.classList.add('bg-electricBlue/20', 'text-neonCyan', 'border', 'border-neonCyan/30');
+          btn.classList.remove('text-slate-300');
+        } else {
+          btn.classList.remove('bg-electricBlue/20', 'text-neonCyan', 'border', 'border-neonCyan/30');
+          btn.classList.add('text-slate-300');
+        }
+      });
+
+      // Close mobile sidebar automatically
+      if (window.innerWidth < 1024) {
+        document.getElementById('sidebar').classList.add('-translate-x-full');
+      }
+
+      if (studioId === 'coding') {
+        runCodePreview();
+      }
+    }
+
+    function toggleSidebar() {
+      const sb = document.getElementById('sidebar');
+      sb.classList.toggle('-translate-x-full');
+    }
+
+    function toggleTheme() {
+      const html = document.documentElement;
+      const icon = document.getElementById('theme-icon');
+      if (html.classList.contains('dark')) {
+        html.classList.remove('dark');
+        html.classList.add('light');
+        icon.className = 'fa-solid fa-moon text-electricBlue';
+        showToast('Light Futuristic Theme Activated', 'info');
+      } else {
+        html.classList.remove('light');
+        html.classList.add('dark');
+        icon.className = 'fa-solid fa-sun text-amber-400';
+        showToast('Deep Space Dark Theme Activated', 'info');
+      }
+    }
+
+    const i18nDict = {
+      en: {
+        nav_chat: 'Advanced AI Chat',
+        nav_voice: 'Fast Smart Voice AI',
+        nav_research: 'Deep Research AI',
+        nav_agent: 'AI Agent Mode',
+        nav_image: 'AI Image Studio',
+        nav_video: 'AI Video Studio',
+        nav_coding: 'AI Coding Studio',
+        nav_document: 'AI Document Studio',
+        nav_learning: 'AI Learning Center',
+        nav_business: 'AI Business Center',
+        nav_workspace: 'Personal Workspace',
+        nav_admin: 'Admin & API Vault',
+        hero_welcome: 'FAST SMART AI — Next-Gen Intelligence'
+      },
+      si: {
+        nav_chat: 'උසස් AI සංවාදය (Chat)',
+        nav_voice: 'සජීවී හඬ AI (Voice)',
+        nav_research: 'ගැඹුරු පර්යේෂණ (Research)',
+        nav_agent: 'ස්වයංක්‍රීය AI නියෝජිත',
+        nav_image: 'AI චිත්‍රාගාරය (Image)',
+        nav_video: 'AI වීඩියෝ මැදිරිය',
+        nav_coding: 'AI කේතීකරණ මැදිරිය',
+        nav_document: 'AI ලේඛන මැදිරිය',
+        nav_learning: 'AI ඉගෙනුම් මධ්‍යස්ථානය',
+        nav_business: 'AI ව්‍යාපාර මධ්‍යස්ථානය',
+        nav_workspace: 'පුද්ගලික වැඩබිම',
+        nav_admin: 'පරිපාලක සහ API සුරක්ෂිතාගාරය',
+        hero_welcome: 'FAST SMART AI — ඊළඟ පරම්පරාවේ බුද්ධිය'
+      }
+    };
+
+    function toggleLanguage() {
+      appState.language = appState.language === 'en' ? 'si' : 'en';
+      const dict = i18nDict[appState.language];
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (dict[key]) el.textContent = dict[key];
+      });
+      document.getElementById('lang-label').textContent = appState.language === 'si' ? 'සිංහල (Active)' : 'සිංහල / EN';
+      showToast(appState.language === 'si' ? 'සිංහල භාෂා සහාය සක්‍රීය කරන ලදී' : 'Switched to English Interface', 'success');
+    }
+
+    function updateActiveMode() {
+      appState.activeMode = document.getElementById('global-mode-select').value;
+      document.getElementById('sidebar-active-mode').textContent = `Mode: ${appState.activeMode}`;
+      showToast(`Switched to ${appState.activeMode}`, 'info');
+    }
+
+    function updateActiveProvider() {
+      appState.activeProvider = document.getElementById('global-provider-select').value;
+      document.getElementById('sidebar-active-model').textContent = appState.activeProvider;
+      showToast(`Active Engine: ${appState.activeProvider}`, 'info');
+    }
+
+    // ==================== 4. ADVANCED AI CHAT ENGINE ====================
+    function initChatThreads() {
+      const saved = localStorage.getItem('fsai_chats');
+      if (saved) {
+        try {
+          appState.conversations = JSON.parse(saved);
+        } catch (e) { appState.conversations = []; }
+      }
+      if (appState.conversations.length === 0) {
+        createNewChat(false);
+      } else {
+        appState.activeChatId = appState.conversations[0].id;
+        renderChatList();
+        renderActiveChatMessages();
+      }
+    }
+
+    function createNewChat(notify = true) {
+      const id = 'chat_' + Date.now();
+      appState.conversations.unshift({
+        id,
+        title: 'New Intelligence Session',
+        folder: 'Work',
+        messages: []
+      });
+      appState.activeChatId = id;
+      saveChatsToStorage();
+      renderChatList();
+      renderActiveChatMessages();
+      if (notify) showToast('New conversation started', 'info');
+    }
+
+    function saveChatsToStorage() {
+      localStorage.setItem('fsai_chats', JSON.stringify(appState.conversations));
+    }
+
+    function filterChatFolder(folder) {
+      appState.folderFilter = folder;
+      renderChatList();
+    }
+
+    function renderChatList() {
+      const list = document.getElementById('chat-thread-list');
+      const query = document.getElementById('chat-search-input').value.toLowerCase();
+      list.innerHTML = '';
+
+      const filtered = appState.conversations.filter(c => {
+        const matchesFolder = appState.folderFilter === 'All' || c.folder === appState.folderFilter;
+        const matchesSearch = c.title.toLowerCase().includes(query) || c.messages.some(m => m.text.toLowerCase().includes(query));
+        return matchesFolder && matchesSearch;
+      });
+
+      filtered.forEach(chat => {
+        const isActive = chat.id === appState.activeChatId;
+        const div = document.createElement('div');
+        div.className = `p-2.5 rounded-xl cursor-pointer flex items-center justify-between text-xs transition ${isActive ? 'bg-electricBlue/25 border border-neonCyan/40 text-neonCyan font-bold' : 'bg-deepBlack/40 hover:bg-midnightBlue/70 text-slate-300'}`;
+        div.innerHTML = `
+          <div class="truncate flex-1 pr-2" onclick="selectChat('$
